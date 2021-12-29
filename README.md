@@ -10,6 +10,10 @@ Install the dependencies and start the server.
 cd simple-wallet
 npm i
 npm run start
+
+OR
+
+PORT=<port> DB_HOST=<host> DB_USER=<user> DB_PASSWORD=<password> DB_NAME=<db-name> node ./bin/www
 ```
 
 ## API Details
