@@ -65,7 +65,7 @@ POST /transact/:walletId
 
 ### Wallet transaction list
 ```http
-POST /transactions
+GET /transactions
 ```
 #### Query params
 | Parameter  | Type      | Description                   |
