@@ -1,6 +1,4 @@
 const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const connection = require('express-myconnection');
 const mysql = require('mysql');
@@ -21,12 +19,11 @@ app.use(connection(mysql,{
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || '',
     database: process.env.DB_NAME || 'wallet_db'
-},'request'));
+},'pool'));
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(allowCrossDomain);
 
 app.use('/', indexRouter);
